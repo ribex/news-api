@@ -1,6 +1,7 @@
 $(document).ready(function() {
     var url =  "https://newsapi.org/v1/sources";
     var data = {language: "en", country: "us"};
+    var myKey = config.MY_NEWS_KEY;
 
     $.ajax({
         url: url,
@@ -25,7 +26,7 @@ $(document).ready(function() {
         event.preventDefault();
         var id = $('#sourceId').val();
         var url = "https://newsapi.org/v1/articles";
-        var data = {source: id, apiKey: "4264f6c6670848c3958a383f52213ef2", sortBy: "top"};
+        var data = {source: id, apiKey: myKey, sortBy: "top"};
         $.ajax({
             url: url,
             data: data,
